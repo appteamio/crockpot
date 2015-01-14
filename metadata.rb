@@ -1,7 +1,7 @@
-name             'crockpot'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+name             'Crockpot'
+maintainer       'App Team'
+maintainer_email 'jalil@appteam.io'
 license          'All rights reserved'
-description      'Installs/Configures crockpot'
+description      'selection of recipes to bootstrap a rails/php development '
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
