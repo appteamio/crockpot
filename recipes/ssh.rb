@@ -46,14 +46,14 @@ end
 
 # allow ssh for new user
 directory "/home/#{node['user']['name']}/.ssh" do
-  owner 'deploy'
-  group 'deploy'
+  owner "#{node['user']['name']}"
+  group "#{node['group']}"
   mode '0700'
   action :create
 end
 file "/home/#{node['user']['name']}/.ssh/authorized_keys" do
-  owner 'deploy'
-  group 'deploy'
+  owner "#{node['user']['name']}"
+  group "#{node['group']}"
   mode '0700'
   content IO.read("/root/.ssh/authorized_keys")
   action :create

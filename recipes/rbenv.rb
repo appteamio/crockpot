@@ -30,7 +30,7 @@ bash 'install ruby' do
 
     rbenv install #{node['ruby']['version']}
     rbenv global #{node['ruby']['version']}
-    echo 'gem: -–no-ri -–no-rdoc' > .gemrc
+    echo 'gem: --no-document' > .gemrc
     .rbenv/bin/rbenv exec gem install bundler
     rbenv rehash
   EOH

@@ -1,0 +1,5 @@
+execute "echo mysql-server mysql-server/root_password password #{node['db']['root_password']} | debconf-set-selections"
+execute "echo mysql-server mysql-server/root_password_again password #{node['db']['root_password']} | debconf-set-selections"
+package "mysql-server"
+package "mysql-client"
+package "libmysqlclient-dev"
