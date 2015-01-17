@@ -32,6 +32,7 @@ bash 'install ruby' do
     rbenv global #{node['ruby']['version']}
     echo 'gem: --no-document' > .gemrc
     .rbenv/bin/rbenv exec gem install bundler
+    .rbenv/bin/rbenv exec gem install rails
     rbenv rehash
   EOH
   not_if { File.exists?(version_path) && `cat #{version_path}`.chomp.split[0] == node['ruby']['version'] }
