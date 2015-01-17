@@ -1,8 +1,9 @@
 production:
-  adapter: postgresql
+  adapter: mysql2
   encoding: unicode
   database: <%= node['app'] %>
   pool: 5
   host: localhost
-  username: <%= node['db']['user']['name'] %>
-  password: <%= node['db']['user']['password'] %>
+  username: root
+  password: <%= node['db']['root_password'] %>
+  socket: /var/run/mysqld/mysqld.sock

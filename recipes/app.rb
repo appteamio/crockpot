@@ -33,3 +33,13 @@ end
 execute "update-rc.d unicorn_#{node['app']} defaults" do
   not_if "ls /etc/rc2.d | grep unicorn_#{node['app']}"
 end
+
+# copy authorized ssh key
+bash "append_authorized_keys" do
+   user "#{node['user']['name']}"
+   code <<-EOF
+      cat /data/pub_key >> /home/#{node['user']['name']}/.ssh/authorized_keys
+      rm /data/pub_key
+   EOF
+   not_if "grep -q #{node['user']['email']} /home/#{node['user']['name']}/.ssh/authorized_keys"
+end
