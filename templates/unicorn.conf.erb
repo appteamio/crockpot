@@ -1,0 +1,7 @@
+listen "127.0.0.1:8080"
+worker_processes 4
+user "<%= node['user']['name'] %>"
+working_directory "/var/www/<%= node['app'] %>/current"
+pid "/var/www/unicorn/pids/unicorn.pid"
+stderr_path "/var/www/unicorn/log/unicorn_err.log"
+stdout_path "/var/www/unicorn/log/unicorn_out.log"

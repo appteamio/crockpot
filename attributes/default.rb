@@ -1,4 +1,4 @@
-default['app']               = 'localdev'
+default['app']               = 'stagvm'
 
 default['nodejs']['dir']     = '/usr/local'
 default['nodejs']['version'] = '0.10.35'

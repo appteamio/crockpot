@@ -6,9 +6,9 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT=/var/www/<%= node['app'] %>/current
-PID=$APP_ROOT/tmp/pids/unicorn.pid
-CMD="cd $APP_ROOT; ~/.rbenv/bin/rbenv exec bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+APP_ROOT=/var/www/<%= node['app'] %>/current/public/
+PID=/var/www/unicorn/pids/unicorn.pid
+CMD="cd $APP_ROOT; /home/<%= node['user']['name'] %>/.rbenv/shims/bundle exec unicorn -D -c /var/www/unicorn/unicorn.conf -E production"
 AS_USER=<%= node['user']['name'] %>
 set -u
 
